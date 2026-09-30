@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Harini | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #172554;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #60a5fa;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #172554, #2563eb);
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(42px, 8vw, 72px);
+      margin-bottom: 10px;
+    }
+
+    .hero-content h2 {
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 400;
+      color: #bfdbfe;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: white;
+      color: #1d4ed8;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #dbeafe;
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      color: #172554;
+      margin-bottom: 40px;
+    }
+
+    /* About */
+    .about-card {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .detail-box {
+      background: #eff6ff;
+      padding: 18px;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+    }
+
+    .detail-box strong {
+      color: #172554;
+    }
+
+    /* Education */
+    .education {
+      background: #eaf2ff;
+    }
+
+    .education-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .education-card {
+      background: white;
+      margin: 18px 0;
+      padding: 22px;
+      border-radius: 12px;
+      border-left: 5px solid #2563eb;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .education-card h3 {
+      color: #1d4ed8;
+      margin-bottom: 5px;
+    }
+
+    /* Hobbies */
+    .hobbies-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .hobby {
+      width: 220px;
+      padding: 30px 20px;
+      text-align: center;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .hobby:hover {
+      transform: translateY(-8px);
+    }
+
+    .hobby span {
+      font-size: 42px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact {
+      background: #172554;
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .email {
+      color: #bfdbfe;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .email:hover {
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0f172a;
+      color: #cbd5e1;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .about-card {
+        padding: 25px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Harini</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi, I'm Harini</h1>
+      <h2>Student & Creative Enthusiast</h2>
+
+      <p>
+        Welcome to my personal portfolio website.
+        Explore my education, interests, hobbies, and personal details.
+      </p>
+
+      <a href="#about" class="btn">Explore My Portfolio</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-card">
+      <p>
+        Hello! My name is <strong>Harini</strong>.
+        I am a student of Malla Reddy Deemed to be University.
+        I enjoy learning new things, being creative, and developing my skills.
+      </p>
+
+      <div class="details">
+
+        <div class="detail-box">
+          <strong>Name:</strong><br>
+          Harini
+        </div>
+
+        <div class="detail-box">
+          <strong>Roll Number:</strong><br>
+          26HEU06R272
+        </div>
+
+        <div class="detail-box">
+          <strong>Father's Name:</strong><br>
+          Venkata Charyulu
+        </div>
+
+        <div class="detail-box">
+          <strong>Mother's Name:</strong><br>
+          Manga
+        </div>
+
+        <div class="detail-box">
+          <strong>Email:</strong><br>
+          harinigovardhanam.rk@gmail.com
+        </div>
+
+        <div class="detail-box">
+          <strong>College:</strong><br>
+          Malla Reddy Deemed to be University
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-container">
+
+      <div class="education-card">
+        <h3>🎓 University</h3>
+        <p>Malla Reddy Deemed to be University</p>
+      </div>
+
+      <div class="education-card">
+        <h3>📚 Intermediate</h3>
+        <p>Sri Chaitanya Jr College</p>
+      </div>
+
+      <div class="education-card">
+        <h3>🏫 School</h3>
+        <p>Kallam Anji Reddy Vidyalaya</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hobbies Section -->
+  <section id="hobbies">
+    <h2 class="section-title">My Hobbies</h2>
+
+    <div class="hobbies-container">
+
+      <div class="hobby">
+        <span>🎮</span>
+        <h3>Playing</h3>
+        <p>I enjoy playing games during my free time.</p>
+      </div>
+
+      <div class="hobby">
+        <span>🎨</span>
+        <h3>Painting</h3>
+        <p>I love expressing my creativity through painting.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+
+    <p>You can reach me through my email:</p>
+
+    <br>
+
+    <a
+      class="email"
+      href="mailto:harinigovardhanam.rk@gmail.com"
+    >
+      harinigovardhanam.rk@gmail.com
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Thank You for visiting my portfolio! 💙</p>
+    <p>&copy; 2026 Harini. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Welcome message
+    window.addEventListener('load', function() {
+      console.log("Welcome to Harini's Portfolio!");
+    });
+  </script>
+
+</body>
+</html>
